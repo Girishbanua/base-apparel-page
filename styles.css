@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+:root {
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+    --gradient-white: linear-gradient(135deg,
+            hsl(0, 0%, 100%) 0%,
+            hsl(0, 100%, 98%) 100%);
+    --gradient-pink: linear-gradient(135deg,
+            hsl(0, 80%, 86%) 0%,
+            hsl(0, 74%, 74%) 100%);
+    --gradient-soft-pink: linear-gradient(135deg,
+            hsl(0, 70%, 90%) 0%,
+            hsl(0, 84%, 85%) 100%);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('./images/bg-pattern-desktop.svg') cover;
+    min-height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+}
+
+.container {
+    display: grid;
+    place-content: center;
+}
+
+.header {
+    min-height: 5vh;
+    max-width: 25vw;
+    margin: 7vh 10vw 5vh;
+}
+
+.header img {
+    width: 100%;
+}
+
+.hero-picture img {
+    width: 100%;
+}
+
+.description {
+    text-align: center;
+    max-width: 85vw;
+    justify-self: center;
+    margin: 4rem 0 5rem;
+}
+
+.description h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 0.5rem;
+    line-height: 1;
+    color: var(--Dark-Grayish-Red);
+    max-width: 70vw;
+    margin-left: 10vw;
+}
+
+.description span {
+    font-weight: 300;
+    color: var(--Desaturated-Red)
+}
+
+.description p {
+    color: var(--Desaturated-Red);
+    line-height: 1.5;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    max-width: 85vw;
+}
+
+.emailForm {
+    margin-top: 3rem;
+    position: relative;
+    max-width: 85vw;
+}
+
+.emailForm input {
+    width: 100%;
+    padding: 0.75rem 0rem;
+    padding-left: 1.5rem;
+    border-radius: 2rem;
+    border: 1px solid var(--Desaturated-Red);
+    color: var(--Dark-Grayish-Red);
+    animation: slidingInput 1.5s ease-in;
+}
+
+.emailForm input:focus {
+    outline-style: solid;
+    outline-width: 1.5px;
+    outline-color: var(--Desaturated-Red);
+}
+
+.error-outline {
+    outline: 1px solid var(--Soft-Red);
+}
+
+.valid-outline {
+    outline: 2px solid lightpink;
+}
+
+::placeholder {
+    opacity: 0.5;
+    color: var(--Desaturated-Red);
+}
+
+.emailForm .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-350%, 30%);
+}
+
+.emailForm #errorIcon {
+    display: none;
+    animation: shakeIcon 0.1s 0.5s 3;    
+}
+
+.emailForm #validIcon {
+    display: none;
+}
+
+.emailForm button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(3%, -5%);
+    padding: 0.7rem 1.7rem;
+    border-radius: 1.5rem;
+    border: none;
+    background: var(--gradient-pink);
+    box-shadow: 1px 5px 10px 1px rgba(195, 43, 90, 0.35);
+    animation: slidingButton 1.5s ease-in;
+}
+
+.emailForm button:hover {
+    box-shadow: 1px 5px 10px 1px rgba(195, 43, 90, 0.5);
+    background: var(--gradient-soft-pink);
+}
+
+.emailForm p {
+    color: var(--Soft-Red);
+    position: absolute;
+    top: 65%;
+    left: 5%;
+    display: none;
+    animation: shake 0.1s 0.5s 5;    
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: var(--Desaturated-Red);
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.header,
+.hero-picture,
+.description>h1,
+.description>p {
+    animation: fadeIn 0.65s ease-in;
+}
+
+.header {
+    animation: slideDown 1s ease-in;
+}
+.description>h1 {
+    animation: slideDown 1.3s ease-in;
+}
+.description>p {
+    animation: slideDown 1.7s ease-in;
+}
+
+@media screen and (min-width: 1000px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 25vh 75vh;
+        grid-template-areas:
+            "logo hero-image"
+            "body hero-image";
+        grid-column-gap: 10vw;
+    }
+
+    .hero-picture {
+        grid-area: hero-image;        
+    }
+
+    .header {
+        height: 10vh;
+        width: 12vw;
+        grid-area: logo;
+        margin-left: 12vw;
+    }
+
+    .description {
+        text-align: left;
+        min-height: 55vh;
+        min-width: 40vw;
+        grid-area: body;
+    }
+
+    .description h1 {
+        font-size: 4rem;
+        max-width: 25vw;
+        letter-spacing: 1rem;
+    }
+
+    .description p {
+        max-width: 25vw;
+        margin-left: 10vw;
+    }
+
+    .emailForm {
+        margin-top: 4rem;
+        margin-left: 10vw;
+    }
+
+    .emailForm input {
+        padding: 1rem 1.5rem;
+
+    }
+
+    .emailForm button {
+        padding: 1rem 2.5rem;
+
+    }
+
+    .emailForm .icon {
+        transform: translate(-450%, 50%);
+        opacity: 0.85;
+    }
+
+    .emailForm p {
+        top: 80%;
+        left: -30%;
+    }
+
+    .attribution {
+        font-size: 0.85rem;
+        max-width: 45vw;
+        position: absolute;
+        bottom: -27vh;
+        left: 12vw;
+        word-spacing: 0.15rem;
+    }
+
+    .attribution a {
+        margin-left: 0.75rem;
+    }
+}
+
+@keyframes slidingButton {
+    from {
+        transform: translateX(-25vw);
+        opacity: 0.7;
+    }
+
+    to {
+        transform: translateX();
+        opacity: 1;
+    }
+}
+
+@keyframes slidingInput {
+    from {
+        width: 1%;
+        opacity: 0.5;
+    }
+
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-5vh);
+    }
+
+    to {
+        transform: translateY();
+    }
+}
+@keyframes sideInsert {
+    from {
+        transform: translateX(5vh);
+    }
+
+    to {
+        transform: translateX();
+    }
+}
+@keyframes shake {
+    from {
+        transform: translateX(-2%);
+    }
+
+    to {
+        transform: translateX(2%);
+    }
+}
+@keyframes shakeIcon {
+    from {
+        transform: translate(-450%, 30%);
+    }
+
+    to {
+        transform: translateX();
+    }   
+}

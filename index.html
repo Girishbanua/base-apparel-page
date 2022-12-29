@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="container">
+
+      <div class="header">
+        <img src="./images/logo.svg" alt="base apparel logo">
+      </div>
+
+      <picture class="hero-picture">
+        <source srcset="images/hero-desktop.jpg" media="(min-width: 1000px)">
+        <img src="images/hero-mobile.jpg" alt="image of a girl ">
+      </picture>
+
+      <div class="description">
+        <h1><span>We're</span> coming soon</h1>
+        <p> Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our launch deals.
+        </p>
+        <div class="emailForm">
+          <input type="email" placeholder="Email Address" id="emailInput" required>
+          <img class="icon" src="./images/icon-error.svg" alt="error icon" id="errorIcon">
+          <img class="icon" src="./images/icons8-checkmark.svg" alt="valid icon" id="validIcon">
+          <button type="submit" id="submitButton"><img src="./images/icon-arrow.svg" alt="greater than symbol"></button>
+          <p id="errorMessage">Please provide a valid email</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"> Frontend_Mentor</a>.
+      Coded by <a href="https://github.com/Girishbanua"> Girish_Chandra_Banua</a>.      
+    </p>
+    
+  </footer>
+</body>
+<script src="./javascript/app.js"></script>
+
+</html>
